@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
+
+//Camila Romero
+
+void validar(char []);
+
+
+
+void validar(char num[]){
+    for (int i = 0; i < strlen(num); i++)
+    {
+        if(!isdigit(num[i]) ) {
+            printf("Ingrese un caracter");
+            break;
+        }
+    }
+}
+ 
+int main(int argc, char const *argv[])
+{
+  int introducirPalabra;
+    printf("Introduzca una palabra: ");
+    scanf("%c", &introducirPalabra);
+  
+  //Mayuscula a minuscula
+	char palabra[] = "h. parzibyte.me";
+	printf("Introducir Palabra: %s\n", palabra);
+ 
+
+	for (int indice = 0; palabra[indice] != '\0'; ++indice){
+		palabra[indice] = tolower(palabra[indice]);
+	}
+	printf("Palabra convertida: %s\n", palabra);
+
+  //de Minuscula a mayuscula
+
+  char palabra[] = "H. parzibyte.me";
+	printf("Cadena original: %s\n", palabra);
+ 
+	for (int indice = 0; palabra[indice] != '\0'; ++indice){
+		palabra[indice] = toupper(palabra[indice]);
+	}
+	printf("Palabra convertida: %s\n", palabra);
+
+  //Saber si es decimal 
+  char a[256];
+    scanf("%s", a);
+    validar(a);
+    printf("blabla");
+  
+  
+	return 0;
+
+  
+}
