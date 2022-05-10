@@ -5,54 +5,43 @@
 
 //Camila Romero
 
-void validar(char []);
+int main(){
 
+char digito;
 
+printf("Ingrese digito: ");
 
-void validar(char num[]){
-    for (int i = 0; i < strlen(num); i++)
-    {
-        if(!isdigit(num[i]) ) {
-            printf("Ingrese un caracter");
-            break;
+digito = getchar();
+
+while(digito != EOF){
+    int entro=0;
+//de mayuscula a miniscula
+if(isupper(digito) && entro==0 ){
+            entro = 1;
+            digito = tolower(digito);
+            putchar(digito);
+
+            }
+//de minuscula a mayuscula
+        if(islower(digito) && entro==0){
+            entro = 1;
+            digito = toupper(digito);
+            putchar(digito);
+
+            }
+//saber si es decimal
+        if( !(isdigit(digito)) && entro==0){
+
+        putchar(digito);
+
         }
-    }
+
+digito = getchar();
+
 }
- 
-int main(int argc, char const *argv[])
-{
-  int introducirPalabra;
-    printf("Introduzca una palabra: ");
-    scanf("%c", &introducirPalabra);
-  
-  //Mayuscula a minuscula
-	char palabra[] = "h. parzibyte.me";
-	printf("Introducir Palabra: %s\n", palabra);
- 
 
-	for (int indice = 0; palabra[indice] != '\0'; ++indice){
-		palabra[indice] = tolower(palabra[indice]);
-	}
-	printf("Palabra convertida: %s\n", palabra);
+printf("\n \n");
 
-  //de Minuscula a mayuscula
 
-  char palabra[] = "H. parzibyte.me";
-	printf("Cadena original: %s\n", palabra);
- 
-	for (int indice = 0; palabra[indice] != '\0'; ++indice){
-		palabra[indice] = toupper(palabra[indice]);
-	}
-	printf("Palabra convertida: %s\n", palabra);
-
-  //Saber si es decimal 
-  char a[256];
-    scanf("%s", a);
-    validar(a);
-    printf("blabla");
-  
-  
-	return 0;
-
-  
+    return 0;
 }
